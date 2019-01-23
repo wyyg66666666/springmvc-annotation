@@ -10,7 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.12</junit.version>
 		<!-- spring的版本不同，可能项目都无法启动 -->
-		<spring.version>4.3.1.RELEASE</spring.version>
+		<spring.version>4.3.6.RELEASE</spring.version>
 		<jackson.version>2.5.0</jackson.version>
 		<mysql-connector-java.version>5.1.37</mysql-connector-java.version>
 		<fastjson.version>1.2.3</fastjson.version>
