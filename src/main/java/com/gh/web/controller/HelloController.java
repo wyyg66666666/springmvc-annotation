@@ -12,5 +12,4 @@ public class HelloController {
 		//视图名 为home
 		return "home";
 	}
-
 }

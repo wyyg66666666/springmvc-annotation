@@ -13,7 +13,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan("com.gh.web")
 @EnableWebMvc//启用 Spring MVC
 public class WebConfig extends WebMvcConfigurerAdapter{
-	
 	//配置jsp视图解析器
 	@Bean
 	public ViewResolver viewResolver() {
@@ -29,5 +28,4 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
-
 }

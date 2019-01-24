@@ -1,15 +1,17 @@
 package com.gh.config;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * 扩展 AbstractAnnotation-ConfigDispatcherServletInitializer 的任
- * 意类都会自动地配置 Dispatcher-Servlet 和 Spring 应用上下文， Spring 的应用上下文会位于应用程序的 Servlet 上下文之中。
+ * 扩展 AbstractAnnotation-ConfigDispatcherServletInitializer 的任意类都会自动地配置 Dispatcher-Servlet 和 Spring 应用上下文，
+ *  Spring 的应用上下文会位于应用程序的 Servlet 上下文之中。
  * @author Test
  *
  */
 public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
-
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class<?>[] {RootConfig.class};
@@ -26,5 +28,8 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 		//将DispatcherServlet映射到"/"
 		return new String[]{ "/" };
 	}
-
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		registration.setMultipartConfig(new MultipartConfigElement("/tmp/uploads"));
+	}
 }
